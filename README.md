@@ -43,5 +43,4 @@ out some directories or add nested directories based on the concrete project
 - This repository https://github.com/golang-standards/project-layout has many stars (8000 atm) which 
 proves that people put quite some effort and thinking into coming up with such a project structure
 and many other people like it.
-
 - Therefore I will use it as a template for my next project and just delete the directories I don't need.
