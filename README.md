@@ -39,10 +39,6 @@ out some directories or add nested directories based on the concrete project
 - https://en.wikipedia.org/wiki/List_of_software_architecture_styles_and_patterns
 
 
-# More ideas
-- Sub-packages are not supported in Golang - what are the benefits, what are the downsides?
-
-
 # Conclusion
 - This repository https://github.com/golang-standards/project-layout has many stars (8000 atm) which 
 proves that people put quite some effort and thinking into coming up with such a project structure
