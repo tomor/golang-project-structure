@@ -32,6 +32,7 @@ out some directories or add nested directories based on the concrete project
 - https://github.com/golang-standards/project-layout
 - https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1
 - https://rakyll.org/style-packages/
+- https://medium.com/golang-learn/go-project-layout-e5213cdcfaa2
 - https://www.ardanlabs.com/blog/2017/02/design-philosophy-on-packaging.html
 - https://peter.bourgon.org/go-best-practices-2016/#repository-structure
 - https://vsupalov.com/go-folder-structure/
@@ -41,3 +42,10 @@ out some directories or add nested directories based on the concrete project
 # More ideas
 - Sub-packages are not supported in Golang - what are the benefits, what are the downsides?
 
+
+# Conclusion
+- This repository https://github.com/golang-standards/project-layout has many stars (8000 atm) which 
+proves that people put quite some effort and thinking into coming up with such a project structure
+and many other people like it.
+
+- Therefore I will use it as a template for my next project and just delete the directories I don't need.
