@@ -83,7 +83,14 @@ the appropriate directory structure.
     ├── LICENSE
     └── README.md
 
-## 3) Hexagonal for more than 1 Aggregate (DDD lingua)
+## 3) Hexagonal for 3 Aggregates (DDD terminology)
+The question is if such a service would make sense ... mixing users, invoices and products. 
+
+For the beginning probably yes. When we don't know to much about the domain and we have only 1 team of 
+people the development will be probably faster with 1 service.
+And if in the future when the service grows and the teams split into multiple teams, 
+we can split also the service into more.
+
     .
     ├── build                 # Compiled files (not commited, but appears in the project after first build)
     ├── contract              # 
@@ -94,10 +101,16 @@ the appropriate directory structure.
     ├── k8s                   # K8s deployment files
     ├── pkg                   # The actual source code of the service
     │   ├── config   
-    │   ├── app   
-    │   ├── handler    
-    │   ├── domain
-    │   └── repository TODO think about this
+    │   ├── app               # Application services (responsibility: auth?, transactions, delegation of logic to domain, delegation to persistence)
+    │   ├── handler           # If we don't have too many files we might not needs subdirs here
+    │   │   ├── user.go
+    │   │   ├── invoice.go
+    │   │   ├── product.go
+    │   ├── domain            # I guess here we should have more sub-directories here not to get all things mixed?
+    │   │   ├── user          # I'm not sure about this...
+    │   │   ├── invoice 
+    │   │   └── product 
+    │   └── repository # How many things will be here? do we need separation of repos for different aggregates?
     ├── .gitignore
     ├── docker-compose.yml
     ├── Jenkinsfile
