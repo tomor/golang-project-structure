@@ -9,23 +9,53 @@ how complicated the project is and regardless of what architectural style it use
 Is it possible or do we need to change the project structure always completely based on what we are 
 building?
 
-My hypothesis is that it's possible to have a basic general template and then leave out
+## Hypotheses 1
+It's possible to have a basic general template and then leave out
 out some directories or add nested directories based on the concrete project
 
-# Type of projects
+## Hypotheses 2 - Counter Hypotheses for Hypotheses 1
+There are too many different type of projects and it's important how big the project is to select
+the appropriate directory structure.
+
+# Approach
+## Idea
+1. Create projects categorization
+1. Collects examples directory structures
+1. Try to combine them and create so called "master" directory structure that would combine all
+1. ....
+1. Profit :)
+
+
+# Categorization of projects
+## Type of projects
 - Backend service with business logic with RPC or REST HTTP API
 - API service with limited amount of business logic, more mapping and validation
 - Library providing go methods as an API 
 - Binary
 - Web project serving HTML, JS, Images
 
-# Architecture style
+## Size of the projects
+- Small library providing a couple of methods
+- A simple micro-service which provides key - value store via a REST API, has persistence
+- Relatively small micro-service that has 1 Aggregate, Persistence, and communicates with an external service
+- Middle size service that has 1 aggregate, persistence, REST API and RPC API and communicates with 
+2 other services via RPC
+- ... ?
+
+## Architecture styles
 - Hexagonal
 - DDD - Domain Driven Design (might be close to hexagonal)
 - 3-tier - Presentation, Business, Persistence
 - Multilayer - Presentation, Application, Business, Persistence
 - MVC - Model, View, Controller
 - ... more ?
+
+
+# Results (in progress)
+
+## Hypothesis 2 confirmation
+- This repository https://github.com/golang-standards/project-layout has quite some many (8000 atm) which 
+suggests that many people like it.
 
 
 # Resources
@@ -37,10 +67,3 @@ out some directories or add nested directories based on the concrete project
 - https://peter.bourgon.org/go-best-practices-2016/#repository-structure
 - https://vsupalov.com/go-folder-structure/
 - https://en.wikipedia.org/wiki/List_of_software_architecture_styles_and_patterns
-
-
-# Conclusion
-- This repository https://github.com/golang-standards/project-layout has many stars (8000 atm) which 
-proves that people put quite some effort and thinking into coming up with such a project structure
-and many other people like it.
-- Therefore I will use it as a template for my next project and just delete the directories I don't need.
