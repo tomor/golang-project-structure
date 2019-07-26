@@ -85,30 +85,7 @@ the appropriate directory structure.
     ├── LICENSE
     └── README.md
 
-## 3) N-Tier
-    .
-    ├── build                 # Compiled files (not commited, but appears in the project after first build)
-    ├── contract              # 
-    │   ├── proto             # 
-    │   └── swagger           # 
-    ├── doc                   # Documentation (images, charts, more md files if needed)
-    ├── gradle                # Gradle wrapper
-    ├── k8s                   # K8s deployment files
-    ├── pkg                   # The actual source code of the service
-    │   ├── app   
-    │   ├── config   
-    │   ├── handler    
-    │   ├── entities   
-    │   └── repository
-    ├── .gitignore
-    ├── docker-compose.yml
-    ├── Jenkinsfile
-    ├── main.go               # Main file of the service
-    ├── Makefile
-    ├── LICENSE
-    └── README.md
-
-## 4) Hexagonal for more than 1 Aggregate (DDD lingua)
+## 3) Hexagonal for more than 1 Aggregate (DDD lingua)
     .
     ├── build                 # Compiled files (not commited, but appears in the project after first build)
     ├── contract              # 
@@ -130,6 +107,31 @@ the appropriate directory structure.
     ├── Makefile
     ├── LICENSE
     └── README.md
+    
+## 4) N-Tier
+    .
+    ├── build                 # Compiled files (not commited, but appears in the project after first build)
+    ├── contract              # 
+    │   ├── proto             # 
+    │   └── swagger           # 
+    ├── doc                   # Documentation (images, charts, more md files if needed)
+    ├── gradle                # Gradle wrapper
+    ├── k8s                   # K8s deployment files
+    ├── pkg                   # The actual source code of the service
+    │   ├── application   
+    │   ├── config   
+    │   ├── controller    
+    │   ├── entities   
+    │   └── repository
+    ├── .gitignore
+    ├── docker-compose.yml
+    ├── Jenkinsfile
+    ├── main.go               # Main file of the service
+    ├── Makefile
+    ├── LICENSE
+    └── README.md
+
+
     
     
 ## 4) More binaries
