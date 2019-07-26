@@ -1,0 +1,60 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Hexa-structure-01 API",
+    "description": "Bla bla bla",
+    "contact": {
+      "name": "Our team",
+      "url": "https://github.com/tomor/golang-project-structure",
+    },
+    "version": "v1"
+  },
+  "basePath": "/v1/hexa",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/object": {
+      "post": {
+        "tags": [
+          "Cereates the object"
+        ],
+        "description": "# Create the object\n\n bla bla bla lorem ipsum\nlorem ipsum\n\n# Example:\n\n```\nv1/hexa/object\n```\n\n# Additional Information\n\nlorem ipsum bla bla bla.",
+        "operationId": "bla bla bla lorem ipsum",
+        "parameters": [
+          {
+            "name": "Parameter1",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "HTTP errors may have one of the following error codes:\n- `INVALID_NAME` - The name is not correct."
+          },
+          "default": {
+            "description": "HTTP errors are represented in the following format",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    }
+  }
+}

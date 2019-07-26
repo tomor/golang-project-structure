@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.github.tomor.golang_hexagonal_01;
+
+
+service Hexa01Service {
+    rpc CreateObject (CreateObjectRequest) returns (CreateObjectResponse) {}
+}
+
+message CreateObjectRequest {
+    string id = 1;
+    string attribute_one = 2;
+    string attribute_two = 3;
+}
+
+message CreateObjectResponse {
+    string id = 1;
+    string name = 2;
+}
