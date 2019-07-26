@@ -50,6 +50,91 @@ the appropriate directory structure.
 - MVC - Model, View, Controller
 - ... more ?
 
+# Directories structures
+
+## 1) Simple Lib
+.... no main function
+
+## 2) Hexagonal
+    .
+    ├── build                       # Compiled files (not commited, but appears in the project after first build)
+    ├── contract                    # 
+    │   ├── proto                   # 
+    │   └── swagger                 # TODOdescribe
+    ├── doc                         # Documentation (images, charts, more md files if needed)
+    ├── gradle                      # Gradle wrapper
+    ├── k8s                         # K8s deployment files
+    ├── pkg                         # The actual source code of the service
+    │   ├── config  
+    │   ├── client  
+    │   │   ├── externalservice.go 
+    │   │   └-─ anothercompany.go 
+    │   ├── handler    
+    │   ├── domain
+    │   │   ├── user.go 
+    │   │   ├── userid.go 
+    │   │   └── address.go 
+    │   └── repository
+    │       ├── usermemory.go 
+    │       └── userpostgres.go
+    ├── .gitignore
+    ├── docker-compose.yml
+    ├── Jenkinsfile
+    ├── main.go                       # Main file of the service
+    ├── Makefile
+    ├── LICENSE
+    └── README.md
+
+## 3) N-Tier
+    .
+    ├── build                 # Compiled files (not commited, but appears in the project after first build)
+    ├── contract              # 
+    │   ├── proto             # 
+    │   └── swagger           # 
+    ├── doc                   # Documentation (images, charts, more md files if needed)
+    ├── gradle                # Gradle wrapper
+    ├── k8s                   # K8s deployment files
+    ├── pkg                   # The actual source code of the service
+    │   ├── app   
+    │   ├── config   
+    │   ├── handler    
+    │   ├── entities   
+    │   └── repository
+    ├── .gitignore
+    ├── docker-compose.yml
+    ├── Jenkinsfile
+    ├── main.go               # Main file of the service
+    ├── Makefile
+    ├── LICENSE
+    └── README.md
+
+## 4) Hexagonal for more than 1 Aggregate (DDD lingua)
+    .
+    ├── build                 # Compiled files (not commited, but appears in the project after first build)
+    ├── contract              # 
+    │   ├── proto             # 
+    │   └── swagger           # 
+    ├── doc                   # Documentation (images, charts, more md files if needed)
+    ├── gradle                # Gradle wrapper
+    ├── k8s                   # K8s deployment files
+    ├── pkg                   # The actual source code of the service
+    │   ├── config   
+    │   ├── app   
+    │   ├── handler    
+    │   ├── domain
+    │   └── repository TODO think about this
+    ├── .gitignore
+    ├── docker-compose.yml
+    ├── Jenkinsfile
+    ├── main.go               # Main file of the service
+    ├── Makefile
+    ├── LICENSE
+    └── README.md
+    
+    
+## 4) More binaries
+.... with the `cmd` folder
+
 
 # Results (in progress)
 
