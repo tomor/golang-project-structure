@@ -1,6 +1,6 @@
 # Golang project structure
 
-# Idea
+### The idea
 It would be nice to have a structure that would fit all type of projects regardless 
 how complicated the project is and regardless of what architectural style it uses 
 (Hexagonal, n-tier, ...)
