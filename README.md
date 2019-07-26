@@ -1,5 +1,4 @@
-# golang-project-structure
-Golang project structure template(s)
+# Golang project structure
 
 # Idea
 It would be nice to have a structure that would fit all type of projects regardless 
