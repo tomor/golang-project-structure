@@ -17,7 +17,6 @@ There are too many different type of projects and it's important how big the pro
 the appropriate directory structure.
 
 # Approach
-## Idea
 1. Create projects categorization
 1. Collects examples directory structures
 1. Try to combine them and create so called "master" directory structure that would combine all
