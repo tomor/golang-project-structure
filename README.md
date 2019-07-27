@@ -26,6 +26,7 @@ the appropriate directory structure.
 
 # Categorization of projects
 ## Type of projects
+TODO refine those categories ... think about projects like smaller cli tools, or bigger like docker , ...
 - Backend service with business logic with RPC or REST HTTP API
 - API service with limited amount of business logic, more mapping and validation
 - Library providing go methods as an API 
