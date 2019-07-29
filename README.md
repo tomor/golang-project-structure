@@ -1,5 +1,9 @@
 # Golang project structure
 
+# TODO thoughts:
+- business applications vs tools vs things like kubernetes (what type of software is that?), https server, proxy, 
+do you write these things the same way?
+
 ### The idea
 It would be nice to have a structure that would fit all type of projects regardless 
 how complicated the project is and regardless of what architectural style it uses 
