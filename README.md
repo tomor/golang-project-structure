@@ -58,21 +58,50 @@ TODO refine those categories ... think about projects like smaller cli tools, or
 # Example directory structures
 
 ## 1) Simple Lib
-.... no main function
-
-## 2) Simple web service
-... TODO just few files
-
-## 3) Commandline tool
-    
-## 4) N-Tier
     .
-    ├── contract              # 
-    │   ├── proto             # 
-    │   └── swagger           # 
-    ├── docs                  # Documentation (images, charts, more md files if needed)
+    ├── example              # Directory with examples
+    ├── gobreaker.go         # The library
+    ├── gobreaker_test.go    
+    ├── go.mod
+    ├── go.sum
+    └── README.md
+    
+## 2) Simple service, TODO: does it make sense to show such simple example? ... or is it useless? :/
+    .
+    ├── main.go         # TODO: Is one file example really "real world production ready thing?"
+    ├── go.mod
+    ├── go.sum
+    └── README.md
+
+## 3) Service with "no architecture" just name packages properly
+    .
+    ├── api                  # Proto/Swagger contract definition     
+    ├── cmd                  
+    ├── plugin                  
+    ├── k8s                  
+    ├── proxy                  
+    ├── stats                  
+    ├── template                  
+    ├── handler              # RPC handlers (kinda controllers)  
+    ├── go.mod
+    ├── go.sum       
+    ├── Jenkinsfile
+    ├── main.go              # Main file of the service
+    ├── Makefile
+    ├── LICENSE
+    └── README.md
+
+## 4) Commandline tool
+... TODO
+    
+## 5) N-Tier
+    .
+    ├── contract              # Contract definitions
+    │   ├── proto             
+    │   └── swagger          
+    ├── doc                   # Documentation (images, charts, more md files if needed)
     ├── k8s                   # K8s deployment files
-    ├── pkg                   # The actual source code of the service
+    ├── pkg                   # We might use "internal" instead
     │   ├── application   
     │   ├── config   
     │   ├── controller    
@@ -80,13 +109,15 @@ TODO refine those categories ... think about projects like smaller cli tools, or
     │   └── repository
     ├── .gitignore
     ├── docker-compose.yml
+    ├── go.mod
+    ├── go.sum    
     ├── Jenkinsfile
     ├── main.go               # Main file of the service
     ├── Makefile
     ├── LICENSE
     └── README.md
     
-## 5) Hexagonal
+## 6) Hexagonal
 I'm not sure if you will have more aggregates in one service ... mixing users, invoices and products. 
 
 For the beginning of your project maybe yes. When we don't know to much about the domain and we have only 1 team of 
@@ -102,7 +133,7 @@ service into more.
     ├── doc                         # Documentation (images, charts, more md files if needed)
     ├── gradle                      # Gradle wrapper
     ├── k8s                         # K8s deployment files
-    ├── pkg                         # The actual source code of the service
+    ├── pkg                         # We might use "internal" instead
     │   ├── config  
     │   ├── application             # Application layer, Responsibility: orcherstration of models, persistence, transactions, auth    
     │   ├── client  
@@ -121,6 +152,8 @@ service into more.
     │       └── userpostgres.go
     ├── .gitignore
     ├── docker-compose.yml
+    ├── go.mod
+    ├── go.sum    
     ├── Jenkinsfile
     ├── main.go                       # Main file of the service
     ├── Makefile
@@ -129,7 +162,7 @@ service into more.
 
 
     
-## 6) ??
+## 7) ??
 .... 
 
 
