@@ -104,7 +104,7 @@ service into more.
     ├── k8s                         # K8s deployment files
     ├── pkg                         # The actual source code of the service
     │   ├── config  
-    │   ├── application             # Application layer (transactions, auth, orchestration of models)    
+    │   ├── application             # Application layer, Responsibility: orcherstration of models, persistence, transactions, auth    
     │   ├── client  
     │   │   ├── externalservice.go  # Domain service (DDD lingua)
     │   │   └-─ anothercompany.go   # Domain service (DDD lingua)
