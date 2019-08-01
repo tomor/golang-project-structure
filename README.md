@@ -118,12 +118,9 @@ TODO refine those categories ... think about projects like smaller cli tools, or
     └── README.md
     
 ## 6) Hexagonal
-I'm not sure if you will have more aggregates in one service ... mixing users, invoices and products. 
-
-For the beginning of your project maybe yes. When we don't know to much about the domain and we have only 1 team of 
-people the development will be faster with 1 service.
-And if in the future when the service grows and the teams split into multiple teams we can split also the 
-service into more.
+You will probably not have more aggregates in one service, but it might make sense in some situations.
+For example at the beginning of the project where splitting into more services would be slowing down the development.
+Other example is when 
 
     .
     ├── build                       # Compiled files (not commited, but appears in the project after first build)
@@ -133,23 +130,13 @@ service into more.
     ├── doc                         # Documentation (images, charts, more md files if needed)
     ├── gradle                      # Gradle wrapper
     ├── k8s                         # K8s deployment files
-    ├── pkg                         # We might use "internal" instead
+    ├── pkg or internal?            # No code from the service is not supposed to be used as a library, but do we need to user the "internal" directory there?
     │   ├── config  
     │   ├── application             # Application layer, Responsibility: orcherstration of models, persistence, transactions, auth    
-    │   ├── client  
-    │   │   ├── externalservice.go  # Domain service (DDD lingua)
-    │   │   └-─ anothercompany.go   # Domain service (DDD lingua)
+    │   ├── client                  # Domain servicse (DDD lingua)
     │   ├── handler                 # RPC / REST "ports", basically controllers from N-tier
-    │   │   ├── user.go
-    │   │   ├── invoice.go
-    │   │   └── product.go
     │   ├── domain                  # The domain model (sometimes called "model")
-    │   │   ├── user                # Can be directory or go file depending on the complexity of the project
-    │   │   ├── invoice 
-    │   │   └── product 
     │   └── repository              # Persistence "ports"
-    │       ├── usermemory.go 
-    │       └── userpostgres.go
     ├── .gitignore
     ├── docker-compose.yml
     ├── go.mod
