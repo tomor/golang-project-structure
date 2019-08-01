@@ -108,15 +108,15 @@ service into more.
     │   ├── client  
     │   │   ├── externalservice.go  # Domain service (DDD lingua)
     │   │   └-─ anothercompany.go   # Domain service (DDD lingua)
-    │   ├── handler 
+    │   ├── handler                 # RPC / REST "ports"
     │   │   ├── user.go
     │   │   ├── invoice.go
     │   │   └── product.go
-    │   ├── domain
+    │   ├── domain                  # The domain model
     │   │   ├── user                # Can be directory or go file depending on the complexity of the project
     │   │   ├── invoice 
     │   │   └── product 
-    │   └── repository
+    │   └── repository              # Persistence "ports"
     │       ├── usermemory.go 
     │       └── userpostgres.go
     ├── .gitignore
