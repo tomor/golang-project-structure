@@ -1,8 +1,6 @@
 # Golang project structure
 
-# TODO thoughts:
-- business applications vs tools vs things like kubernetes (what type of software is that?), https server, proxy, 
-do you write these things the same way?
+
 
 ### The idea
 It would be nice to have a structure that would fit all type of projects regardless 
@@ -22,15 +20,20 @@ the appropriate directory structure.
 
 # Approach
 1. Create projects categorization
-1. Collects examples directory structures
+1. Collects examples of existing directory structure from real projects
 1. Try to combine them and create so called "master" directory structure that would combine all
 1. ....
 1. Profit :)
+
+## TODO thoughts:
+- business applications vs tools vs things like kubernetes (what type of software is that?), https server, proxy, 
+do you write these things the same way?
 
 
 # Categorization of projects
 ## Type of projects
 TODO refine those categories ... think about projects like smaller cli tools, or bigger like docker , ...
+
 - Backend service with business logic with RPC or REST HTTP API
 - API service with limited amount of business logic, more mapping and validation
 - Library providing go methods as an API 
@@ -46,92 +49,28 @@ TODO refine those categories ... think about projects like smaller cli tools, or
 - ... ?
 
 ## Architecture styles
+- Unnamed - just create packages with names that make sense
+- N-tier (Presentation, Application, Business, Persistence)
 - Hexagonal
-- DDD - Domain Driven Design (might be close to hexagonal)
-- 3-tier - Presentation, Business, Persistence
-- Multilayer - Presentation, Application, Business, Persistence
 - MVC - Model, View, Controller
-- ... more ?
+- ... 
 
-# Directories structures
+# Example directory structure from real projects
 
 ## 1) Simple Lib
 .... no main function
 
-## 2) Hexagonal
-    .
-    ├── build                       # Compiled files (not commited, but appears in the project after first build)
-    ├── contract                    # 
-    │   ├── proto                   # 
-    │   └── swagger                 # TODOdescribe
-    ├── doc                         # Documentation (images, charts, more md files if needed)
-    ├── gradle                      # Gradle wrapper
-    ├── k8s                         # K8s deployment files
-    ├── pkg                         # The actual source code of the service
-    │   ├── config  
-    │   ├── client  
-    │   │   ├── externalservice.go 
-    │   │   └-─ anothercompany.go 
-    │   ├── handler    
-    │   ├── domain
-    │   │   ├── user.go 
-    │   │   ├── userid.go 
-    │   │   └── address.go 
-    │   └── repository
-    │       ├── usermemory.go 
-    │       └── userpostgres.go
-    ├── .gitignore
-    ├── docker-compose.yml
-    ├── Jenkinsfile
-    ├── main.go                       # Main file of the service
-    ├── Makefile
-    ├── LICENSE
-    └── README.md
+## 2) Simple web service
+... TODO just few files
 
-## 3) Hexagonal for 3 Aggregates (DDD terminology)
-The question is if such a service would make sense ... mixing users, invoices and products. 
-
-For the beginning probably yes. When we don't know to much about the domain and we have only 1 team of 
-people the development will be probably faster with 1 service.
-And if in the future when the service grows and the teams split into multiple teams, 
-we can split also the service into more.
-
-    .
-    ├── build                 # Compiled files (not commited, but appears in the project after first build)
-    ├── contract              # 
-    │   ├── proto             # 
-    │   └── swagger           # 
-    ├── doc                   # Documentation (images, charts, more md files if needed)
-    ├── gradle                # Gradle wrapper
-    ├── k8s                   # K8s deployment files
-    ├── pkg                   # The actual source code of the service
-    │   ├── config   
-    │   ├── app               # Application services (responsibility: auth?, transactions, delegation of logic to domain, delegation to persistence)
-    │   ├── handler           # If we don't have too many files we might not needs subdirs here
-    │   │   ├── user.go
-    │   │   ├── invoice.go
-    │   │   ├── product.go
-    │   ├── domain            # I guess here we should have more sub-directories here not to get all things mixed?
-    │   │   ├── user          # I'm not sure about this...
-    │   │   ├── invoice 
-    │   │   └── product 
-    │   └── repository # How many things will be here? do we need separation of repos for different aggregates?
-    ├── .gitignore
-    ├── docker-compose.yml
-    ├── Jenkinsfile
-    ├── main.go               # Main file of the service
-    ├── Makefile
-    ├── LICENSE
-    └── README.md
+## 3) Commandline tool
     
 ## 4) N-Tier
     .
-    ├── build                 # Compiled files (not commited, but appears in the project after first build)
     ├── contract              # 
     │   ├── proto             # 
     │   └── swagger           # 
-    ├── doc                   # Documentation (images, charts, more md files if needed)
-    ├── gradle                # Gradle wrapper
+    ├── docs                  # Documentation (images, charts, more md files if needed)
     ├── k8s                   # K8s deployment files
     ├── pkg                   # The actual source code of the service
     │   ├── application   
@@ -146,12 +85,52 @@ we can split also the service into more.
     ├── Makefile
     ├── LICENSE
     └── README.md
+    
+## 5) Hexagonal
+I'm not sure if you will have more aggregates in one service ... mixing users, invoices and products. 
+
+For the beginning of your project maybe yes. When we don't know to much about the domain and we have only 1 team of 
+people the development will be faster with 1 service.
+And if in the future when the service grows and the teams split into multiple teams we can split also the 
+service into more.
+
+    .
+    ├── build                       # Compiled files (not commited, but appears in the project after first build)
+    ├── contract                    # 
+    │   ├── proto                   # 
+    │   └── swagger                 # TODOdescribe
+    ├── doc                         # Documentation (images, charts, more md files if needed)
+    ├── gradle                      # Gradle wrapper
+    ├── k8s                         # K8s deployment files
+    ├── pkg                         # The actual source code of the service
+    │   ├── config  
+    │   ├── application             # Application layer (transactions, auth, orchestration of models)    
+    │   ├── client  
+    │   │   ├── externalservice.go  # Domain service (DDD lingua)
+    │   │   └-─ anothercompany.go   # Domain service (DDD lingua)
+    │   ├── handler 
+    │   │   ├── user.go
+    │   │   ├── invoice.go
+    │   │   └── product.go
+    │   ├── domain
+    │   │   ├── user                # Can be directory or go file depending on the complexity of the project
+    │   │   ├── invoice 
+    │   │   └── product 
+    │   └── repository
+    │       ├── usermemory.go 
+    │       └── userpostgres.go
+    ├── .gitignore
+    ├── docker-compose.yml
+    ├── Jenkinsfile
+    ├── main.go                       # Main file of the service
+    ├── Makefile
+    ├── LICENSE
+    └── README.md
 
 
     
-    
-## 4) More binaries
-.... with the `cmd` folder
+## 6) ??
+.... 
 
 
 # Results (in progress)
