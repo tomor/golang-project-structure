@@ -55,7 +55,7 @@ TODO refine those categories ... think about projects like smaller cli tools, or
 - MVC - Model, View, Controller
 - ... 
 
-# Example directory structure from real projects
+# Example directory structures
 
 ## 1) Simple Lib
 .... no main function
@@ -97,8 +97,8 @@ service into more.
     .
     ├── build                       # Compiled files (not commited, but appears in the project after first build)
     ├── contract                    # 
-    │   ├── proto                   # 
-    │   └── swagger                 # TODOdescribe
+    │   ├── proto                   # Proto contract definition
+    │   └── swagger                 # Swagger contract definition
     ├── doc                         # Documentation (images, charts, more md files if needed)
     ├── gradle                      # Gradle wrapper
     ├── k8s                         # K8s deployment files
@@ -108,11 +108,11 @@ service into more.
     │   ├── client  
     │   │   ├── externalservice.go  # Domain service (DDD lingua)
     │   │   └-─ anothercompany.go   # Domain service (DDD lingua)
-    │   ├── handler                 # RPC / REST "ports"
+    │   ├── handler                 # RPC / REST "ports", basically controllers from N-tier
     │   │   ├── user.go
     │   │   ├── invoice.go
     │   │   └── product.go
-    │   ├── domain                  # The domain model
+    │   ├── domain                  # The domain model (sometimes called "model")
     │   │   ├── user                # Can be directory or go file depending on the complexity of the project
     │   │   ├── invoice 
     │   │   └── product 
