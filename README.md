@@ -1,6 +1,12 @@
 # Golang project structure
 
 
+TODO check this: https://medium.com/@kujtimii.h/creating-a-todo-app-using-gokit-cli-20f066a58e1
+
+Idea: Separate directories for logical packages and layered packages (todo find correct names)
+E.g. application directory with layers(handler, service, repositories) and next to it directory with some packages that 
+doesnt fit to layers, but are somehow logical - http, security, ....
+
 
 ### The idea
 It would be nice to have a structure that would fit all type of projects regardless 
